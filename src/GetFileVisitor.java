@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class GetFileVisitor extends SimpleFileVisitor<Path> {
     public ArrayList<String> pathToFile; // Массив записей, куда будем класть имена файлов и папок. Далее
     private Path path;      // сменим объектом, реализовав "стратегию" , Path path - входной путь - папка,
-    public GetFileVisitor (String path) { // в которой будем шариться.
+    public GetFileVisitor (Path path) { // в которой будем шариться.
         super();
         pathToFile = new ArrayList<String>(); // банальный такой конструктор =/
-        this.path = Paths.get(path);
+        this.path = path;
     }
 
     /*
